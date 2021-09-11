@@ -20,6 +20,18 @@ function QuestionForm(props) {
   function handleSubmit(event) {
     event.preventDefault();
     console.log(formData);
+    fetch("http://localhost:4000/questions",{
+      Method:"POST",
+      Headers:
+  { "Content-Type": "application/json" },
+
+Body:
+{
+  "prompt": string,
+  "answers": arrayofstrings,
+  "correctIndex": integer
+}
+    })
   }
 
   return (

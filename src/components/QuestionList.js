@@ -1,10 +1,18 @@
-import React from "react";
+import React, {useState} from "react";
+
 
 function QuestionList() {
+   const displayList = questions.map((question)=>{
+    <li key ={question.id}>
+     prompt: {question.prompt} 
+     answers:{question.answers}
+     correctindex:{question.correctIndex}
+    </li>
+  })
   return (
     <section>
       <h1>Quiz Questions</h1>
-      <ul>{/* display QuestionItem components here after fetching */}</ul>
+      <ul>{displayList}</ul>
     </section>
   );
 }
