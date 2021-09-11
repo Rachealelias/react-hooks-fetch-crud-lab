@@ -21,16 +21,16 @@ function QuestionForm(props) {
     event.preventDefault();
     console.log(formData);
     fetch("http://localhost:4000/questions",{
-      Method:"POST",
-      Headers:
+      method:"POST",
+      headers:
   { "Content-Type": "application/json" },
 
-Body:
+body: JSON.stringify(
 {
-  "prompt": string,
-  "answers": arrayofstrings,
-  "correctIndex": integer
-}
+  "prompt": formData.prompt,
+  "answers": [formData.answer1,formData.answer2,formData.answer3,formData.answer4],
+  "correctIndex": formData.correctIndex
+})
     })
   }
 
