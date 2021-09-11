@@ -1,15 +1,11 @@
-import React from "react";
-import QuestionList from "./QuestionList";
+import React from "react"
 
 function AdminNavBar({ onChangePage }) {
 
-  // function handleList(){
-  //  QuestionList()
-  // }
   return (
     <nav>
       <button onClick={() => onChangePage("Form")}>New Question</button>
-      <button onClick={(QuestionList) => onChangePage("List")}>View Questions</button>
+      <button onClick={() => onChangePage("List")}>View Questions</button>
     </nav>
   );
 }
